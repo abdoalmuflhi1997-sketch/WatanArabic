@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watan Arabic | وطن عربي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--p:#b91c3c;--pd:#8a1530;--s:#0f0f1a;--a:#d93a5a;--b2:#1e4d8c;--b2l:#2a6bc4;--bg:#f5f6f8;--c:#fff;--t:#1a1a2e;--tl:#5a6573;--b:#e8eaed;--sh:0 2px 12px rgba(0,0,0,.06);--shh:0 8px 28px rgba(0,0,0,.1);--tr:.25s ease}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans Arabic',sans-serif;background:var(--bg);color:var(--t);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{max-width:1280px;margin:0 auto;padding:0 20px}
+
+/* Top bar */
+.tb{background:var(--s);color:#fff;font-size:12px;padding:6px 0;border-bottom:2px solid var(--p);position:relative}
+.tb::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--b2l),transparent);opacity:.6}
+.tb .c{display:flex;justify-content:space-between;align-items:center}
+.tbl{display:flex;gap:18px;align-items:center}
+.tbl span{display:flex;align-items:center;gap:5px;color:rgba(255,255,255,.7)}
+.tbr{display:flex;gap:12px;align-items:center}
+.tbr a{color:rgba(255,255,255,.6);font-size:14px;transition:var(--tr);display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%}
+.tbr a:hover{color:var(--b2l);background:rgba(255,255,255,.08)}
+
+/* Header */
+.mh{background:#fff;position:sticky;top:0;z-index:100;box-shadow:var(--sh);position:relative}
+.mh::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--p),var(--b2),var(--p));opacity:.35}
+.mh .c{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px}
+.li{width:42px;height:42px;background:linear-gradient(135deg,var(--p),var(--a));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:900}
+.lt h1{font-size:24px;font-weight:900;color:var(--s);line-height:1}
+.lt span{font-size:11px;color:var(--p);font-weight:700;letter-spacing:1px}
+.ha{display:flex;gap:12px;align-items:center}
+.sb{position:relative}
+.sb input{width:220px;padding:9px 36px 9px 14px;border:1.5px solid var(--b);border-radius:24px;font-family:inherit;font-size:13px;transition:var(--tr);background:var(--bg)}
+.sb input:focus{outline:none;border-color:var(--b2);width:260px;background:#fff}
+.sb button{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--tl);cursor:pointer;font-size:14px}
+.bsub{background:linear-gradient(135deg,var(--p),var(--a));color:#fff;border:none;padding:9px 20px;border-radius:24px;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;transition:var(--tr);white-space:nowrap}
+.bsub:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(185,28,60,.35)}
+
+/* Nav */
+.mn{background:var(--s);position:relative;z-index:99;border-bottom:1px solid var(--b2);border-bottom-width:1.5px}
+.mn::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--b2);opacity:.25}
+.mn .c{display:flex;justify-content:center;position:relative}
+.mmb{display:none;background:none;border:none;color:#fff;font-size:18px;cursor:pointer;padding:12px 16px;width:100%;text-align:right;position:relative;z-index:101}
+.nl{display:flex;position:relative;z-index:100}
+.nl a{display:block;padding:13px 22px;color:rgba(255,255,255,.75);font-weight:700;font-size:14px;transition:var(--tr);position:relative}
+.nl a::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2.5px;background:var(--b2);transition:var(--tr)}
+.nl a:hover,.nl a.on{color:#fff}
+.nl a:hover::after,.nl a.on::after{width:50%}
+
+/* Breaking */
+.bn{background:linear-gradient(90deg,var(--p),var(--a));color:#fff;padding:10px 0;overflow:hidden}
+.bnw{display:flex;align-items:center;gap:12px}
+.bnl{background:#fff;color:var(--p);padding:3px 12px;font-weight:900;font-size:11px;border-radius:4px;white-space:nowrap;flex-shrink:0}
+.bnc{display:flex;gap:40px;animation:t 35s linear infinite;white-space:nowrap}
+.bnc span{font-size:13px;font-weight:500;opacity:.95}
+@keyframes t{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.bn:hover .bnc{animation-play-state:paused}
+
+/* Hero */
+.hs{padding:30px 0}
+.hg{display:grid;grid-template-columns:1.6fr 1fr;gap:20px}
+.hm{position:relative;border-radius:14px;overflow:hidden;height:420px;box-shadow:var(--sh)}
+.hm img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.hm:hover img{transform:scale(1.03)}
+.ho{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(15,15,26,.92),rgba(15,15,26,.3),transparent);padding:35px;color:#fff}
+.hcat{display:inline-block;background:var(--b2);color:#fff;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:800;margin-bottom:12px}
+.ht{font-size:26px;font-weight:900;line-height:1.35;margin-bottom:12px}
+.hmeta{display:flex;gap:18px;font-size:13px;color:rgba(255,255,255,.7)}
+.hmeta span{display:flex;align-items:center;gap:5px}
+.hs2{display:flex;flex-direction:column;gap:16px}
+.sc{background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--sh);transition:var(--tr);display:flex;flex-direction:column;flex:1}
+.sc:hover{transform:translateY(-3px);box-shadow:var(--shh)}
+.sci{height:130px;overflow:hidden}
+.sci img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.sc:hover .sci img{transform:scale(1.06)}
+.scc{padding:14px 16px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.sccat{color:var(--b2);font-size:11px;font-weight:800;margin-bottom:6px}
+.sct{font-size:15px;font-weight:800;line-height:1.45;color:var(--t)}
+.scm{font-size:12px;color:var(--tl);margin-top:8px}
+
+/* Section header */
+.sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--b);position:relative}
+.sh::after{content:'';position:absolute;bottom:-2px;right:0;width:60px;height:2px;background:var(--b2)}
+.st{font-size:20px;font-weight:900;color:var(--s);display:flex;align-items:center;gap:8px}
+.st i{color:var(--b2);font-size:18px}
+.va{color:var(--b2);font-weight:700;font-size:13px;display:flex;align-items:center;gap:4px;transition:var(--tr)}
+.va:hover{gap:8px;color:var(--b2l)}
+
+/* News grid */
+.ns{padding:35px 0;background:#fff}
+.ng{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.nc{background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--sh);transition:var(--tr);border:1px solid var(--b)}
+.nc:hover{transform:translateY(-6px);box-shadow:var(--shh);border-color:transparent}
+.nci{height:190px;overflow:hidden;position:relative}
+.nci img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.nc:hover .nci img{transform:scale(1.08)}
+.nccat{position:absolute;top:12px;right:12px;background:var(--b2);color:#fff;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:800}
+.ncc{padding:18px}
+.nct{font-size:17px;font-weight:800;line-height:1.5;margin-bottom:10px;color:var(--t)}
+.ncx{font-size:14px;color:var(--tl);line-height:1.7;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ncm{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--tl);padding-top:14px;border-top:1px solid var(--b)}
+.ncm span{display:flex;align-items:center;gap:4px}
+.ncm .bm{display:flex;gap:8px}
+.ncm .bm button{background:none;border:none;color:var(--tl);cursor:pointer;font-size:14px;transition:var(--tr);padding:4px}
+.ncm .bm button:hover{color:var(--b2)}
+.ncm .bm button.bk.on{color:var(--b2)}
+
+/* Most read */
+.mrs{padding:35px 0;background:var(--bg)}
+.mrg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.mrc{background:#fff;border-radius:12px;padding:18px;box-shadow:var(--sh);transition:var(--tr);border-right:3px solid var(--b2);position:relative;counter-increment:mr}
+.mrc:hover{transform:translateY(-3px);box-shadow:var(--shh)}
+.mrc::before{content:counter(mr);position:absolute;top:12px;left:12px;font-size:32px;font-weight:900;color:var(--b);line-height:1;z-index:0}
+.mrc h4{font-size:15px;font-weight:800;line-height:1.5;margin-bottom:8px;position:relative;z-index:1}
+.mrc .mrm{font-size:12px;color:var(--tl);display:flex;gap:12px;position:relative;z-index:1}
+
+/* Analysis */
+.als{padding:50px 0;background:linear-gradient(135deg,var(--s),#1a1a35);color:#fff;position:relative;overflow:hidden}
+.als::before{content:'';position:absolute;top:-30%;right:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(30,77,140,.12),transparent);border-radius:50%}
+.als .sh{border-color:rgba(255,255,255,.1)}
+.als .sh::after{background:var(--b2)}
+.als .st{color:#fff}
+.alg{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;position:relative;z-index:1}
+.alc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px;transition:var(--tr);backdrop-filter:blur(8px)}
+.alc:hover{background:rgba(255,255,255,.07);transform:translateY(-4px);border-color:rgba(30,77,140,.3)}
+.alh{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.ala{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2.5px solid var(--b2)}
+.aln h4{font-size:15px;font-weight:800}
+.aln span{font-size:12px;color:rgba(255,255,255,.55)}
+.alc h3{font-size:18px;font-weight:900;line-height:1.5;margin-bottom:12px}
+.alc p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:16px}
+.alc .rm{color:var(--b2l);font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:6px;transition:var(--tr)}
+.alc .rm:hover{gap:10px;color:#4a9eff}
+
+/* Opinion */
+.ops{padding:45px 0;background:var(--bg)}
+.opg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.opc{background:#fff;border-radius:14px;padding:22px;text-align:center;box-shadow:var(--sh);transition:var(--tr);border-top:3px solid var(--b2)}
+.opc:hover{transform:translateY(-5px);box-shadow:var(--shh)}
+.opc img{width:68px;height:68px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid var(--b);transition:var(--tr)}
+.opc:hover img{border-color:var(--b2)}
+.opc h4{font-size:15px;font-weight:800;margin-bottom:3px}
+.opc .opr{font-size:11px;color:var(--b2);font-weight:700;margin-bottom:12px}
+.opc p{font-size:13px;color:var(--tl);line-height:1.7;font-style:italic}
+
+/* Related */
+.rls{padding:35px 0;background:#fff}
+.rlg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.rrc{display:flex;gap:12px;background:var(--bg);border-radius:10px;padding:12px;transition:var(--tr);align-items:center}
+.rrc:hover{background:var(--b);transform:translateX(-4px)}
+.rrc img{width:70px;height:70px;border-radius:8px;object-fit:cover;flex-shrink:0}
+.rrc div h4{font-size:13px;font-weight:800;line-height:1.45;margin-bottom:4px}
+.rrc div span{font-size:11px;color:var(--tl)}
+
+/* Floating Social Icons */
+.fsi{position:fixed;top:50%;left:16px;transform:translateY(-50%);z-index:998;display:flex;flex-direction:column;gap:8px}
+.fsi a{width:38px;height:38px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--tl);font-size:15px;box-shadow:0 2px 10px rgba(0,0,0,.1);transition:var(--tr);border:1px solid var(--b)}
+.fsi a:hover{color:#fff;transform:scale(1.12);border-color:transparent}
+.fsi a:nth-child(1):hover{background:#1877f2}
+.fsi a:nth-child(2):hover{background:#000}
+.fsi a:nth-child(3):hover{background:#e4405f}
+.fsi a:nth-child(4):hover{background:#ff0000}
+.fsi a:nth-child(5):hover{background:#0088cc}
+@media(max-width:768px){.fsi{display:none}}
+
+/* Reading mode */
+.rmb{position:fixed;bottom:24px;left:24px;z-index:999;background:var(--s);color:#fff;width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.25);transition:var(--tr);display:flex;align-items:center;justify-content:center;font-size:18px}
+.rmb:hover{transform:scale(1.1)}
+body.rm{background:#faf8f3;color:#2c2416}
+body.rm .nc,body.rm .sc,body.rm .mrc,body.rm .opc,body.rm .alc{background:#fff}
+body.rm .ns,body.rm .rls{background:#faf8f3}
+body.rm .ncx,body.rm .scm,body.rm .ncm,body.rm .tl,body.rm .opr{color:#6b5e4a}
+body.rm .tbr a,body.rm .tbl span{color:rgba(255,255,255,.65)}
+
+/* Share */
+.shp{position:fixed;bottom:24px;right:24px;z-index:999}
+.shb{background:linear-gradient(135deg,var(--p),var(--a));color:#fff;width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(185,28,60,.35);transition:var(--tr);display:flex;align-items:center;justify-content:center;font-size:18px}
+.shb:hover{transform:scale(1.1)}
+.shm{position:absolute;bottom:58px;right:0;display:flex;flex-direction:column;gap:8px;opacity:0;visibility:hidden;transform:translateY(10px);transition:var(--tr)}
+.shm.on{opacity:1;visibility:visible;transform:translateY(0)}
+.shm a{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;transition:var(--tr);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.shm a:hover{transform:scale(1.15)}
+.shm .wa{background:#25d366}
+.shm .x{background:#000}
+.shm .tg{background:#0088cc}
+
+/* Footer */
+.mf{background:var(--s);color:#fff;padding:50px 0 0;position:relative}
+.mf::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,transparent,var(--b2),transparent);opacity:.5}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:35px;margin-bottom:40px}
+.fb .lt h1{color:#fff;font-size:22px}
+.fb p{margin-top:12px;color:rgba(255,255,255,.6);line-height:1.8;font-size:13.5px}
+.fs{display:flex;gap:10px;margin-top:18px}
+.fs a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#fff;transition:var(--tr);font-size:14px}
+.fs a:hover{background:var(--b2);transform:translateY(-2px)}
+.fl h4{font-size:14px;font-weight:800;margin-bottom:16px}
+.fl li{margin-bottom:10px}
+.fl a{color:rgba(255,255,255,.6);font-size:13px;transition:var(--tr);display:flex;align-items:center;gap:6px}
+.fl a:hover{color:var(--b2l);padding-right:4px}
+.fl input{width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.05);color:#fff;font-family:inherit;font-size:13px;margin-bottom:10px}
+.fl input::placeholder{color:rgba(255,255,255,.4)}
+.fl .bsub{width:100%;padding:10px;font-size:13px}
+.fb2{border-top:1px solid rgba(255,255,255,.08);padding:18px 0;text-align:center;font-size:12px;color:rgba(255,255,255,.4)}
+
+/* Responsive */
+@media(max-width:1024px){
+.hg{grid-template-columns:1fr}
+.hm{height:340px}
+.hs2{flex-direction:row;overflow-x:auto;padding-bottom:8px}
+.sc{min-width:260px}
+.ng{grid-template-columns:repeat(2,1fr)}
+.mrg{grid-template-columns:repeat(2,1fr)}
+.alg{grid-template-columns:1fr}
+.opg{grid-template-columns:repeat(2,1fr)}
+.rlg{grid-template-columns:repeat(2,1fr)}
+.fg{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+.tb .c{flex-direction:column;gap:6px}
+.mh .c{flex-direction:column;gap:12px;padding:10px 0}
+.sb input{width:180px}
+.sb input:focus{width:200px}
+.mmb{display:flex;align-items:center;gap:10px;position:relative;z-index:101}
+.nl{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(15,15,26,.98);backdrop-filter:blur(12px);flex-direction:column;z-index:100;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nl.on{display:flex}
+.nl a{text-align:center;border-bottom:1px solid rgba(255,255,255,.08);padding:12px}
+.nl a:hover{background:rgba(30,77,140,.2)}
+.hm{height:280px}
+.ht{font-size:19px}
+.ho{padding:20px}
+.ng{grid-template-columns:1fr}
+.mrg{grid-template-columns:1fr}
+.opg{grid-template-columns:1fr}
+.rlg{grid-template-columns:1fr}
+.fg{grid-template-columns:1fr;text-align:center}
+.fs{justify-content:center}
+.fl a{justify-content:center}
+}
+
+/* Animations */
+@keyframes f{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.nc,.alc,.opc,.mrc,.rrc{opacity:0;animation:f .5s ease forwards}
+</style>
+</head>
+<body>
+
+<div class="tb"><div class="container c"><div class="tbl"><span><i class="far fa-calendar-alt"></i> الأحد، 12 يونيو 2026</span><span><i class="far fa-clock"></i> 20:48 م</span><span><i class="fas fa-cloud-sun"></i> القاهرة 31°م</span></div><div class="tbr"><a href="#"><i class="fa-brands fa-x-twitter"></i></a><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a><a href="#"><i class="fa-brands fa-telegram"></i></a></div></div></div>
+
+<header class="mh"><div class="container c"><a href="#" class="logo"><div class="li">و</div><div class="lt"><h1>Watan Arabic</h1><span>وطن عربي</span></div></a><div class="ha"><div class="sb"><input type="text" placeholder="ابحث..." id="si"><button onclick="s()"><i class="fas fa-search"></i></button></div><button class="bsub">اشترك</button></div></div></header>
+
+<nav class="mn"><div class="container c"><button class="mmb" onclick="tgm()"><i class="fas fa-bars"></i> القائمة</button><ul class="nl" id="nl"><li><a href="#" class="on">الرئيسية</a></li><li><a href="#ns">سياسة</a></li><li><a href="#als">تحليل</a></li><li><a href="#ops">رأي</a></li><li><a href="#rls">اقتصاد</a></li><li><a href="#">ثقافة</a></li><li><a href="#">رياضة</a></li><li><a href="#">تكنولوجيا</a></li></ul></div></nav>
+
+<div class="bn"><div class="container bnw"><span class="bnl">عاجل</span><div class="bnc"><span>اجتماع طارئ لمجلس الأمن لمناقشة التطورات في المنطقة</span><span>البنك المركزي يعلن إجراءات جديدة لدعم الاقتصاد</span><span>اتفاقية تعاون عربية في مجال الطاقة المتجددة</span><span>انطلاق أعمال القمة العربية الـ33 في المنامة</span><span>توقيع اتفاقية سلام تاريخية بين طرفي النزاع</span><span>اجتماع طارئ لمجلس الأمن لمناقشة التطورات في المنطقة</span><span>البنك المركزي يعلن إجراءات جديدة لدعم الاقتصاد</span><span>اتفاقية تعاون عربية في مجال الطاقة المتجددة</span></div></div></div>
+
+<section class="hs"><div class="container"><div class="hg"><div class="hm"><img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=900&q=80" alt="" loading="eager"><div class="ho"><span class="hcat">سياسة</span><h2 class="ht">قمة عربية استثنائية تناقش مستقبل التعاون الإقليمي وتحديات الأمن الغذائي</h2><div class="hmeta"><span><i class="far fa-user"></i> أحمد الخالدي</span><span><i class="far fa-clock"></i> منذ 3 س</span><span><i class="far fa-comment"></i> 128</span></div></div></div><div class="hs2"><div class="sc"><div class="sci"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80" alt="" loading="lazy"></div><div class="scc"><span class="sccat">اقتصاد</span><h3 class="sct">أسواق المال العربية تسجل ارتفاعاً ملحوظاً في تعاملات الأسبوع</h3><div class="scm">منذ ساعة</div></div></div><div class="sc"><div class="sci"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&q=80" alt="" loading="lazy"></div><div class="scc"><span class="sccat">تكنولوجيا</span><h3 class="sct">إطلاق أول قمر صناعي عربي للاستشعار عن بعد</h3><div class="scm">منذ ساعتين</div></div></div></div></div></div></section>
+
+<section class="ns" id="ns"><div class="container"><div class="sh"><h2 class="st"><i class="far fa-newspaper"></i> أحدث الأخبار</h2><a href="#" class="va">عرض الكل <i class="fas fa-arrow-left"></i></a></div><div class="ng">
+<article class="nc" data-id="1"><div class="nci"><img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=500&q=80" alt="" loading="lazy"><span class="nccat">سياسة</span></div><div class="ncc"><h3 class="nct">مباحثات ثنائية بين وزيري خارجية مصر والسعودية لتعزيز التعاون</h3><p class="ncx">استعراض سبل دعم العلاقات الثنائية والقضايا الإقليمية ذات الاهتمام المشترك بين البلدين الشقيقين...</p><div class="ncm"><span><i class="far fa-clock"></i> منذ 5 س</span><div class="bm"><button onclick="sh(this,1)" title="مشاركة"><i class="fas fa-share-alt"></i></button><button onclick="bk(this,1)" title="حفظ" class="bk"><i class="far fa-bookmark"></i></button></div></div></div></article>
+<article class="nc" data-id="2"><div class="nci"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&q=80" alt="" loading="lazy"><span class="nccat">اقتصاد</span></div><div class="ncc"><h3 class="nct">النفط يتجاوز حاجز الـ80 دولاراً وسط توقعات باستقرار الأسواق</h3><p class="ncx">تحليلات الخبراء تشير إلى استمرار التقلبات في أسواق الطاقة العالمية خلال الفترة المقبلة...</p><div class="ncm"><span><i class="far fa-clock"></i> منذ 7 س</span><div class="bm"><button onclick="sh(this,2)"><i class="fas fa-share-alt"></i></button><button onclick="bk(this,2)" class="bk"><i class="far fa-bookmark"></i></button></div></div></div></article>
+<article class="nc" data-id="3"><div class="nci"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&q=80" alt="" loading="lazy"><span class="nccat">صحة</span></div><div class="ncc"><h3 class="nct">الصحة العالمية تحذر من موجة جديدة وتوصي باتخاذ الاحتياطات</h3><p class="ncx">منظمة الصحة العالمية تصدر توجيهات جديدة للدول لمواجهة التطورات الصحية الأخيرة...</p><div class="ncm"><span><i class="far fa-clock"></i> منذ 9 س</span><div class="bm"><button onclick="sh(this,3)"><i class="fas fa-share-alt"></i></button><button onclick="bk(this,3)" class="bk"><i class="far fa-bookmark"></i></button></div></div></div></article>
+<article class="nc" data-id="4"><div class="nci"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80" alt="" loading="lazy"><span class="nccat">تكنولوجيا</span></div><div class="ncc"><h3 class="nct">شركات التقنية العربية تستثمر مليارات في الذكاء الاصطناعي</h3><p class="ncx">تقرير حديث يكشف عن خطط طموحة للشركات الناشئة في مجال التحول الرقمي...</p><div class="ncm"><span><i class="far fa-clock"></i> منذ 12 س</span><div class="bm"><button onclick="sh(this,4)"><i class="fas fa-share-alt"></i></button><button onclick="bk(this,4)" class="bk"><i class="far fa-bookmark"></i></button></div></div></div></article>
+<article class="nc" data-id="5"><div class="nci"><img src="https://images.unsplash.com/photo-1569163139599-0f4517e36f51?w=500&q=80" alt="" loading="lazy"><span class="nccat">رياضة</span></div><div class="ncc"><h3 class="nct">المنتخب الوطني يستعد لمواجهة مصيرية في تصفيات كأس العالم</h3><p class="ncx">الجهاز الفني يعلن القائمة النهائية للاعبين استعداداً للمباراة الحاسمة المقبلة...</p><div class="ncm"><span><i class="far fa-clock"></i> أمس</span><div class="bm"><button onclick="sh(this,5)"><i class="fas fa-share-alt"></i></button><button onclick="bk(this,5)" class="bk"><i class="far fa-bookmark"></i></button></div></div></div></article>
+<article class="nc" data-id="6"><div class="nci"><img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=500&q=80" alt="" loading="lazy"><span class="nccat">ثقافة</span></div><div class="ncc"><h3 class="nct">افتتاح معرض الكتاب الدولي بمشاركة أكثر من 50 دولة</h3><p class="ncx">فعاليات ثقافية متنوعة وندوات فكرية في أكبر تظاهرة أدبية بالمنطقة العربية...</p><div class="ncm"><span><i class="far fa-clock"></i> أمس</span><div class="bm"><button onclick="sh(this,6)"><i class="fas fa-share-alt"></i></button><button onclick="bk(this,6)" class="bk"><i class="far fa-bookmark"></i></button></div></div></div></article>
+</div></div></section>
+
+<section class="mrs"><div class="container"><div class="sh"><h2 class="st"><i class="fas fa-fire"></i> الأكثر قراءة</h2><a href="#" class="va">عرض الكل <i class="fas fa-arrow-left"></i></a></div><div class="mrg">
+<div class="mrc"><h4>القمة العربية تناقش خطة عمل مشتركة للتنمية المستدامة 2030</h4><div class="mrm"><span><i class="far fa-eye"></i> 12.4K</span><span><i class="far fa-clock"></i> منذ يوم</span></div></div>
+<div class="mrc"><h4>دراسة: الاستثمار في التعليم يعزز النمو الاقتصادي بنسبة 40%</h4><div class="mrm"><span><i class="far fa-eye"></i> 9.8K</span><span><i class="far fa-clock"></i> منذ يومين</span></div></div>
+<div class="mrc"><h4>تقرير: التحول الرقمي في القطاع الحكومي يوفر 30% من التكاليف</h4><div class="mrm"><span><i class="far fa-eye"></i> 8.2K</span><span><i class="far fa-clock"></i> منذ 3 أيام</span></div></div>
+<div class="mrc"><h4>خبراء: الطاقة المتجددة ستغطي 50% من احتياجات المنطقة بحلول 2035</h4><div class="mrm"><span><i class="far fa-eye"></i> 7.1K</span><span><i class="far fa-clock"></i> منذ 4 أيام</span></div></div>
+</div></div></section>
+
+<section class="als" id="als"><div class="container"><div class="sh"><h2 class="st"><i class="fas fa-chart-line"></i> تحليل</h2><a href="#" class="va">عرض الكل <i class="fas fa-arrow-left"></i></a></div><div class="alg">
+<article class="alc"><div class="alh"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="" class="ala" loading="lazy"><div class="aln"><h4>د. محمد العتيبي</h4><span>باحث في العلاقات الدولية</span></div></div><h3>التحولات الجيوسياسية في الشرق الأوسط: رؤية استراتيجية</h3><p>تشهد المنطقة العربية تحولات جوهرية في ميزان القوى الإقليمي، مما يستدعي إعادة النظر في الاستراتيجيات التقليدية...</p><a href="#" class="rm">اقرأ المقال <i class="fas fa-arrow-left"></i></a></article>
+<article class="alc"><div class="alh"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="" class="ala" loading="lazy"><div class="aln"><h4>د. فاطمة الزهراء</h4><span>أستاذة الاقتصاد السياسي</span></div></div><h3>الاقتصاد الرقمي العربي: الفرص والتحديات في عصر الذكاء الاصطناعي</h3><p>مع التسارع الرقمي العالمي، تبرز الحاجة الملحة لبناء اقتصاديات عربية مرنة قادرة على مواكبة الثورة التكنولوجية...</p><a href="#" class="rm">اقرأ المقال <i class="fas fa-arrow-left"></i></a></article>
+</div></div></section>
+
+<section class="ops" id="ops"><div class="container"><div class="sh"><h2 class="st"><i class="far fa-comments"></i> رأي</h2><a href="#" class="va">عرض الكل <i class="fas fa-arrow-left"></i></a></div><div class="opg">
+<div class="opc"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80" alt="" loading="lazy"><h4>عبدالرحمن المسعود</h4><div class="opr">كاتب سياسي</div><p>"الإصلاح السياسي ليس خياراً بل ضرورة ملحة لمواكبة تطلعات الشعوب..."</p></div>
+<div class="opc"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80" alt="" loading="lazy"><h4>ليلى الحسيني</h4><div class="opr">محللة اقتصادية</div><p>"التنويع الاقتصادي يمثل الركيزة الأساسية لبناء اقتصاديات عربية قوية..."</p></div>
+<div class="opc"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80" alt="" loading="lazy"><h4>خالد بن طلال</h4><div class="opr">باحث أكاديمي</div><p>"التعليم هو الاستثمار الحقيقي للأجيال القادمة، ويجب إعادة هيكلة المنظومة..."</p></div>
+<div class="opc"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&q=80" alt="" loading="lazy"><h4>سارة القحطاني</h4><div class="opr">ناشطة حقوقية</div><p>"تمكين المرأة ليس مجرد شعار، بل هو مفتاح التنمية الشاملة وتحقيق العدالة..."</p></div>
+</div></div></section>
+
+<section class="rls" id="rls"><div class="container"><div class="sh"><h2 class="st"><i class="fas fa-link"></i> مقالات ذات صلة</h2><a href="#" class="va">عرض الكل <i class="fas fa-arrow-left"></i></a></div><div class="rlg">
+<div class="rrc"><img src="https://images.unsplash.com/photo-1526304640152-d4619684e484?w=200&q=80" alt="" loading="lazy"><div><h4>مؤشرات اقتصادية إيجابية تنعش آمال المستثمرين</h4><span>اقتصاد · منذ 4 س</span></div></div>
+<div class="rrc"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=200&q=80" alt="" loading="lazy"><div><h4>تعاون عسكري عربي مشترك في مجال التدريبات</h4><span>سياسة · منذ 6 س</span></div></div>
+<div class="rrc"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=200&q=80" alt="" loading="lazy"><div><h4>الذكاء الاصطناعي يغير وجه الصناعة العربية</h4><span>تكنولوجيا · منذ 8 س</span></div></div>
+<div class="rrc"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=200&q=80" alt="" loading="lazy"><div><h4>مهرجان فني دولي يجذب آلاف الزوار في العاصمة</h4><span>ثقافة · منذ 10 س</span></div></div>
+</div></div></section>
+
+<footer class="mf"><div class="container"><div class="fg">
+<div class="fb"><a href="#" class="logo"><div class="li">و</div><div class="lt"><h1>Watan Arabic</h1><span>وطن عربي</span></div></a><p>منصة إخبارية عربية مستقلة تقدم تغطية شاملة وموثوقة للأحداث الجارية في الوطن العربي والعالم.</p><div class="fs"><a href="#"><i class="fa-brands fa-x-twitter"></i></a><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></div></div>
+<div class="fl"><h4>الأقسام</h4><ul><li><a href="#"><i class="fas fa-chevron-left"></i> الرئيسية</a></li><li><a href="#"><i class="fas fa-chevron-left"></i> سياسة</a></li><li><a href="#"><i class="fas fa-chevron-left"></i> اقتصاد</a></li><li><a href="#"><i class="fas fa-chevron-left"></i> تحليل</a></li><li><a href="#"><i class="fas fa-chevron-left"></i> رأي</a></li></ul></div>
+<div class="fl"><h4>عن الموقع</h4><ul><li><a href="#"><i class="fas fa-chevron-left"></i> من نحن</a></li><li><a href="#"><i class="fas fa-chevron-left"></i> فريق التحرير</a></li><li><a href="#"><i class="fas fa-chevron-left"></i> سياسة الخصوصية</a></li><li><a href="#"><i class="fas fa-chevron-left"></i> شروط الاستخدام</a></li></ul></div>
+<div class="fl"><h4>تابعنا</h4><div class="fs" style="margin-top:10px"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-x-twitter"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a><a href="#"><i class="fa-brands fa-telegram"></i></a></div></div>
+</div><div class="fb2">جميع الحقوق محفوظة © 2026 Watan Arabic | وطن عربي</div></div></footer>
+
+<div class="fsi">
+<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+<a href="#"><i class="fa-brands fa-youtube"></i></a>
+<a href="#"><i class="fa-brands fa-telegram"></i></a>
+</div>
+
+<button class="rmb" onclick="tgrm()" title="وضع القراءة"><i class="fas fa-book-open"></i></button>
+
+<div class="shp"><div class="shm" id="shm"><a href="#" class="wa" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a><a href="#" class="x" title="X"><i class="fa-brands fa-x-twitter"></i></a><a href="#" class="tg" title="تلغرام"><i class="fa-brands fa-telegram"></i></a></div><button class="shb" onclick="tgsh()" title="مشاركة"><i class="fas fa-share-alt"></i></button></div>
+
+<script>
+// Mobile menu
+function tgm(){document.getElementById('nl').classList.toggle('on')}
+
+// Search
+function s(){const v=document.getElementById('si').value;if(v)alert('البحث عن: '+v)}
+document.getElementById('si').addEventListener('keypress',e=>{if(e.key==='Enter')s()})
+
+// Reading mode
+function tgrm(){document.body.classList.toggle('rm');localStorage.setItem('rm',document.body.classList.contains('rm')?'1':'0')}
+if(localStorage.getItem('rm')==='1')document.body.classList.add('rm')
+
+// Share toggle
+function tgsh(){document.getElementById('shm').classList.toggle('on')}
+
+// Bookmark
+const bm=JSON.parse(localStorage.getItem('bm')||'[]')
+function bk(el,id){const i=bm.indexOf(id);if(i>-1){bm.splice(i,1);el.classList.remove('on');el.querySelector('i').className='far fa-bookmark'}else{bm.push(id);el.classList.add('on');el.querySelector('i').className='fas fa-bookmark'}localStorage.setItem('bm',JSON.stringify(bm))}
+document.querySelectorAll('.bk').forEach(b=>{const id=+b.closest('.nc').dataset.id;if(bm.includes(id)){b.classList.add('on');b.querySelector('i').className='fas fa-bookmark'}})
+
+// Share article
+function sh(el,id){const t=el.closest('.nc').querySelector('.nct').textContent;const u=encodeURIComponent(location.href+'#article-'+id);const tu=encodeURIComponent(t);window.open('https://wa.me/?text='+tu+'%20'+u,'_blank')}
+
+// Scroll animation
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';obs.unobserve(x.target)}})},{threshold:.1})
+document.querySelectorAll('.nc,.alc,.opc,.mrc,.rrc').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el)})
+
+// Header shadow
+window.addEventListener('scroll',()=>{document.querySelector('.mh').style.boxShadow=window.scrollY>40?'0 4px 20px rgba(0,0,0,.12)':'0 2px 12px rgba(0,0,0,.06)'})
+
+// Close menus on outside click
+document.addEventListener('click',e=>{if(!e.target.closest('.shp'))document.getElementById('shm').classList.remove('on');if(!e.target.closest('.mn'))document.getElementById('nl').classList.remove('on')})
+
+// Stagger animations
+const st=['.nc','.mrc','.opc','.rrc'];st.forEach(s=>{document.querySelectorAll(s).forEach((el,i)=>{el.style.animationDelay=(i*.08)+'s'})})
+</script>
+</body>
+</html>
